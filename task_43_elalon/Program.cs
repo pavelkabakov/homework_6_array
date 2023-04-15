@@ -2,10 +2,14 @@
 //  заданных уравнениями y = k1 * x + b1, y = k2 * x + b2;
 // значения b1, k1, b2 и k2 задаются пользователем.
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
-// --------- формула  ---------
-// x = (-b2 + b1)/(-k1 + k2);
-// y = k2 * x + b2;
+
 // Эталонное решение
+
+// Введите коэффициент для 1 прямой >2
+// Введите константу для 1 прямой >5
+// Введите коэффициент для 2 прямой >4
+// Введите константу для 2 прямой >9
+// Точка пересечения уравнений у=2 * x + 5 и у=4 * х + 9  имеет координаты (-0,5, -0,5)
 
 const int coefficinet = 0; //
 const int constant = 1;    //
@@ -20,7 +24,7 @@ double[] lineData2 = InputLineData(line2);
 if (ValidateLines(lineData1, lineData2))
 {
     double[] coord = FindCoords(lineData1, lineData2);
-    Console.Write($"Точка пересечения уравнений у={lineData1[coefficinet]} * x+{lineData1[constant]} и у={lineData2[coefficinet]}*х + {lineData2[constant]} ");
+    Console.Write($"Точка пересечения уравнений у={lineData1[coefficinet]} * x + {lineData1[constant]} и у={lineData2[coefficinet]} * х + {lineData2[constant]} ");
     Console.WriteLine($" имеет координаты ({coord[x_coord]}, {coord[y_coord]})");
 }
 
@@ -42,20 +46,20 @@ double[] InputLineData(int numberOfLine)
     return lineData;
 }
 
-
 // Поиск координат
+
 double[] FindCoords(double[] lineData1, double[] lineData2)
 {
     double[] coord = new double[2];
-    coord[x_coord] = (lineData1[constant] - lineData2[constant]) / 
-    (lineData2[coefficinet] - lineData1[coefficinet]);
-    coord[y_coord] = (lineData1[constant] * coord[x_coord]) + 
-    lineData1[constant];
+    // x = ( b1 - b2) / (k2 - k1);
+    coord[x_coord] = (lineData1[coefficinet] - lineData2[coefficinet]) / (lineData2[constant] - lineData1[constant]);
+    // y = k2 * x + b2;
+    coord[y_coord] = (lineData2[constant] * coord[x_coord]) + lineData2[coefficinet];
     return coord;
 }
 
 // проверка введенных данных
-bool ValidateLines (double[] lineData1, double[] lineData2) 
+bool ValidateLines(double[] lineData1, double[] lineData2)
 {
     if (lineData1[coefficinet] == lineData2[coefficinet])
     {

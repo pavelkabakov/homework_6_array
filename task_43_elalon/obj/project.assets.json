@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dev\\Знакомство C#\\homework_6_array\\task_43\\tasl_43.csproj",
+      "projectUniqueName": "D:\\Dev\\Знакомство C#\\homework_6_array\\task_43_elalon\\tasl_43.csproj",
       "projectName": "tasl_43",
-      "projectPath": "D:\\Dev\\Знакомство C#\\homework_6_array\\task_43\\tasl_43.csproj",
+      "projectPath": "D:\\Dev\\Знакомство C#\\homework_6_array\\task_43_elalon\\tasl_43.csproj",
       "packagesPath": "C:\\Users\\pavel\\.nuget\\packages\\",
-      "outputPath": "D:\\Dev\\Знакомство C#\\homework_6_array\\task_43\\obj\\",
+      "outputPath": "D:\\Dev\\Знакомство C#\\homework_6_array\\task_43_elalon\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pavel\\AppData\\Roaming\\NuGet\\NuGet.Config"
